@@ -27,7 +27,7 @@ const SkillsBar = ({ data }: { data: TextSourceType }) => {
               style={{ width: `${skill.level}%` }}
             ></div>
             {extra && (
-              <div className="h-3 rounded-r bg-striped bg-2828" style={{ width: `${extraWidth}%` }}></div>
+              <div className="h-3 rounded-r bg-striped bg-2828 animate-move-stripe" style={{ width: `${extraWidth}%` }}></div>
             )}
           </div>
         </div>

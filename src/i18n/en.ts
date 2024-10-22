@@ -42,6 +42,7 @@ export type LangType = {
   icon: string;
   message: string;
   level: string;
+  extra?: boolean;
 };
 
 export type LangsType = TitleType & {
@@ -154,31 +155,31 @@ export const data: DataStructure = {
   },
   services: {
     title: "Here's what I'm good at",
-    subTitle: "These are the services I offer",
+    subTitle: "Here are the key areas of my expertise.",
     services: [
       {
         title: "Web Development",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "I specialize in building dynamic, secure, and scalable web applications.",
         icon: "development"
       },
       {
         title: "Web Design",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "I can transform design concepts into interactive and responsive websites.",
         icon: "graphics"
       },
       {
         title: "Software Engineering",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "I architect efficient software solutions that meet business and technical needs.",
         icon: "content"
       },
       {
         title: "Mobile & IoT Development",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "I develop IoT and mobile solutions, connecting hardware and software seamlessly.",
         icon: "mobile"
       },
       {
         title: "Electrical Engineering",
-        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "From circuit boards to software, I have hands-on experience with electrical engineering and embedded systems.",
         icon: "email"
       },
       {
@@ -190,7 +191,7 @@ export const data: DataStructure = {
   },
   portfolio: {
     title: "Check out my Portfolio",
-    subTitle: "Here's what I have done with the past"
+    subTitle: "Explore the projects I've worked on throughout my career."
   },
   workExperience: {
     title: "My work experience",
@@ -273,14 +274,15 @@ export const data: DataStructure = {
       {
         icon: "de",
         message: "Hallo! 👋",
-        level: "5"
+        level: "5",
+        extra: true
       }
     ]
   },
   contactDetails: {
-    title: "Here's a contact form",
-    subTitle: "Have Any Questions?",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit condimentum turpis nisl sem, viverra habitasse urna ante lobortis fermentum accumsan. Viverra habitasse urna ante lobortis fermentum accumsan.",
+    title: "Get in Touch",
+    subTitle: "Feel Free to Reach Out!",
+    description: "Feel free to reach out for any questions, collaboration opportunities, or just to say hi!",
     items: [
       {
         icon: "bxl-github",
@@ -314,6 +316,7 @@ export const data: DataStructure = {
         head: "email",
         text: "inbox@tolacika.xyz",
         link: "mailto:inbox@tolacika.xyz",
+        target: "_blank"
       },
       {
         icon: "bxs-map-pin",

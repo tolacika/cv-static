@@ -1,17 +1,15 @@
 
+import { LangType } from "@/i18n/en";
 import { TextSourceType } from "@/pages";
 
 type LangItemProps = {
   lang: LangType,
 };
 
-type LangType = {
-  icon: string,
-  message: string,
-  level: string,
-};
 
 const LangItem = ({ lang }: LangItemProps) => {
+  const extra = lang.extra && parseInt(lang.level) < 80;
+  const extraWidth = 80 - parseInt(lang.level)
   return (
     <>
       <div className="flex items-end justify-between">
@@ -26,6 +24,9 @@ const LangItem = ({ lang }: LangItemProps) => {
           className={`h-3 rounded-full bg-primary`}
           style={{ width: `${lang.level}%` }}
         ></div>
+        {extra && (
+          <div className="h-3 rounded-r bg-striped bg-2828 animate-move-stripe" style={{ width: `${extraWidth}%` }}></div>
+        )}
       </div>
     </>
   );

@@ -56,6 +56,15 @@ const config: Config = {
       backgroundImage: {
         striped: 'linear-gradient(45deg, #d0cce3 25%, #b9b5c9 25%, #b9b5c9 50%, #d0cce3 50%, #d0cce3 75%, #b9b5c9 75%, #b9b5c9 100%)',
       },
+      animation: {
+        "move-stripe": "move-stripe 10s linear infinite",
+      },
+      keyframes: {
+        "move-stripe": {
+          "0%": { "background-position-x": "0%" },
+          "100%": { "background-position-x": "100%" },
+        },
+      },
       backgroundSize: {
         "2828": "28.28px 28.28px"
       },
