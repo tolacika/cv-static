@@ -6,7 +6,7 @@ import logoWebshippyImage from '../assets/img/logo-webshippy.png';
 import logoMannaImage from '../assets/img/logo-manna.png';
 import { useState } from 'react';
 import Image from 'next/image';
-import { HomeProps } from '@/pages';
+import { TextSourceType } from '@/pages';
 
 type JobType = {
   company: string,
@@ -24,7 +24,7 @@ const imageSet = {
   manna: logoMannaImage,
 };
 
-const WorkExperience = ({ data }: { data: HomeProps }) => {
+const WorkExperience = ({ data }: { data: TextSourceType }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false); 
 
   return (

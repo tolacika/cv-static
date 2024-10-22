@@ -3,18 +3,25 @@ import logoImage from '../assets/img/logo.svg';
 import iconCloseImage from '../assets/img/icon-close.svg';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { HomeProps } from '@/pages';
+import { TextSourceType } from '@/pages';
+//import Link from 'next/link';
+
+export const ScrollTo = (id: string) => {
+  const element = document.getElementById(id.slice(1));
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Navbar = ({ data }: { data: HomeProps }) => {
+const Navbar = ({ data }: { data: TextSourceType }) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-  const triggerNavItem = (id: any) => { };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-  const triggerMobileNavItem = (id: any) => {
+  const triggerMobileNavItem = (id: string) => {
     setMobileMenu(false);
-    triggerNavItem(id);
+    ScrollTo(id);
   };
 
   useEffect(() => {
@@ -42,44 +49,24 @@ const Navbar = ({ data }: { data: HomeProps }) => {
           </div>
           <div className="hidden lg:block">
             <ul className="flex items-center">
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#about")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+              <li className="group">
+                <span onClick={() => ScrollTo('#about')}
+                  className="cursor-pointer px-3 pt-0.5 font-header font-semibold uppercase text-white">About</span>
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#services")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+              <li className="group">
+                <span onClick={() => ScrollTo("#services")}
+                  className="cursor-pointer px-3 pt-0.5 font-header font-semibold uppercase text-white">Services</span>
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#portfolio")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+              <li className="group">
+                <span onClick={() => ScrollTo("#work")}
+                  className="cursor-pointer px-3 pt-0.5 font-header font-semibold uppercase text-white">Work</span>
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#clients")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</span>
-                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#work")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#statistics")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
-                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#blog")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</span>
-                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-              <li className="group pl-6">
-                <span onClick={() => triggerNavItem("#contact")}
-                  className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+              <li className="group">
+                <span onClick={() => ScrollTo("#contact")}
+                  className="cursor-pointer px-3 pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
             </ul>

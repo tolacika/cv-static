@@ -3,6 +3,7 @@ import typography from "@tailwindcss/typography";
 import forms from "@tailwindcss/forms";
 import aspectRatio from "@tailwindcss/aspect-ratio";
 import defaultTheme from "tailwindcss/defaultTheme";
+//import defaultColors from "tailwindcss/colors"
 
 const config: Config = {
   content: [
@@ -24,6 +25,7 @@ const config: Config = {
     },
 
     colors: {
+      //...defaultColors,
       transparent: "transparent",
       primary: "#5540af",
       "primary-light": "#d0cce3",
@@ -48,11 +50,6 @@ const config: Config = {
     container: {
       center: true,
       padding: "1rem",
-    },
-
-    shadows: {
-      default: "0 2px 18px rgba(0, 0, 0, 0.06)",
-      md: "0 -3px 36px rgba(0, 0, 0, 0.12)",
     },
 
     extend: {

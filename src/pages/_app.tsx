@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>CV | Atom Template</title>
+        <title>CV | Marshall Laszlo Toth</title>
         <meta charSet="utf-8" />
         <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />

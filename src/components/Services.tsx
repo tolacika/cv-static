@@ -12,15 +12,10 @@ import iconDesignBlackImage from '../assets/img/icon-design-black.svg';
 import iconGraphicsWhiteImage from '../assets/img/icon-graphics-white.svg';
 import iconGraphicsBlackImage from '../assets/img/icon-graphics-black.svg';
 import Image from "next/image";
-import { HomeProps } from '@/pages';
+import { TextSourceType } from '@/pages';
+import { ServiceType } from '@/i18n/en';
 
-type ServiceType = {
-  icon: keyof typeof iconSet,
-  title: string,
-  description: string,
-};
-
-const iconSet = {
+const iconSet: { [key: string]: { black: string, white: string } } = {
   development: {
     black: iconDevelopmentBlackImage,
     white: iconDevelopmentWhiteImage,
@@ -47,7 +42,7 @@ const iconSet = {
   },
 };
 
-const Services = ({ data }: { data: HomeProps }) => {
+const Services = ({ data }: { data: TextSourceType }) => {
   return (
     <div className="container py-16 md:py-20" id="services">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -74,7 +69,7 @@ const Services = ({ data }: { data: HomeProps }) => {
                   {service.title}
                 </h3>
                 <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                  {service.description}
+                  {service.subTitle}
                 </p>
               </div>
             </div>

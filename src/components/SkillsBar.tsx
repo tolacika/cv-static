@@ -1,5 +1,5 @@
 
-import { HomeProps } from "@/pages";
+import { TextSourceType } from "@/pages";
 
 type SkillType = {
   name: string,
@@ -7,7 +7,7 @@ type SkillType = {
   extra?: boolean,
 };
 
-const SkillsBar = ({ data }: { data: HomeProps }) => {
+const SkillsBar = ({ data }: { data: TextSourceType }) => {
   return (
     <>
       {(data.intro.skills as unknown as Array<SkillType>).map((skill, idx) => {

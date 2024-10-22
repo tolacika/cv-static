@@ -2,9 +2,9 @@
 import LetsConnect from "./LetsConnect";
 import SkillsBar from "./SkillsBar";
 import LanguageSection from "./LanguageSection";
-import { HomeProps } from "@/pages";
+import { TextSourceType } from "@/pages";
 
-const Intro = ({ data }: { data: HomeProps }) => {
+const Intro = ({ data }: { data: TextSourceType }) => {
   return (
     <div className="bg-grey-50" id="about">
       <div className="container-fluid md:container">
@@ -19,7 +19,7 @@ const Intro = ({ data }: { data: HomeProps }) => {
             <p className="pt-6 font-body leading-relaxed text-grey-20">
               {data.intro.paragraph}
             </p>
-            <LetsConnect data={data} className="pt-6" scheme="primary" />
+            <LetsConnect data={data} className="pt-6 lg:justify-start" scheme="primary" />
 
             <LanguageSection data={data} />
           </div>

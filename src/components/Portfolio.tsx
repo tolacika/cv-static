@@ -4,9 +4,9 @@ import portfolioStripeImage from '@/assets/img/portfolio-stripe.jpeg';
 import portfolioFedexImage from '@/assets/img/portfolio-fedex.jpeg';
 import portfolioMicrosoftImage from '@/assets/img/portfolio-microsoft.jpeg';
 import Image from 'next/image';
-import { HomeProps } from '@/pages';
+import { TextSourceType } from '@/pages';
 
-const Portfolio = ({ data }: { data: HomeProps }) => {
+const Portfolio = ({ data }: { data: TextSourceType }) => {
   return (
     <div className="container py-16 md:py-20" id="portfolio">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">

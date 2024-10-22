@@ -1,10 +1,12 @@
 
-import { HomeProps } from "@/pages";
+import { TextSourceType } from "@/pages";
+import { ScrollTo } from "./Navbar";
 
 type SocialLinksProps = {
   className?: string,
   scheme?: 'white' | 'primary',
-  data: HomeProps,
+  data: TextSourceType,
+  followMe?: boolean,
 };
 
 const colorScheme = {
@@ -18,16 +20,21 @@ const colorScheme = {
   }
 };
 
-const SocialLinks = ({ className, scheme = 'white', data }: SocialLinksProps) => {
+const SocialLinks = ({ className, data, scheme = 'white', followMe = false }: SocialLinksProps) => {
   return (
     <div className={`flex items-center justify-center pt-5 sm:justify-start sm:pt-0 ${className}`}>
-      {data.socialLinks.links.map(({ icon, link, target = "_blank" }, idx) => {
-        return (
-          <a href={link} target={target} key={idx} className={idx > 0 ? "pl-4" : ""}>
-            <i className={`bx ${icon} text-2xl ${colorScheme[scheme].base} ${colorScheme[scheme].hover}`}></i>
-          </a>
-        );
-      })}
+      {data.socialLinks.links.filter(({ followable = false }) => followMe ? followable : true)
+        .map(({ icon, link = null, scrollTo = null, target = "_blank" }, idx) => {
+          return link ? (
+            <a href={link} target={target} key={idx} className={`px-2 ${colorScheme[scheme].base} ${colorScheme[scheme].hover}`}>
+              <i className={`bx ${icon} text-2xl `}></i>
+            </a>
+          ) : (
+            <span key={idx} onClick={() => ScrollTo(scrollTo!)} className={`cursor-pointer px-2 ${colorScheme[scheme].base} ${colorScheme[scheme].hover}`}>
+              <i className={`bx ${icon} text-2xl `}></i>
+            </span>
+          );
+        })}
     </div>
   );
 };

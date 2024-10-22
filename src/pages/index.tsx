@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Content from "@/components/Content";
 import Footer from "@/components/Footer";
 
-export type HomeProps = typeof source;
+export type TextSourceType = typeof source;
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Home(data: HomeProps) {
+export default function Home(data: TextSourceType) {
   return (
     <>
       <Navbar data={data} />

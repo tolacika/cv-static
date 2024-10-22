@@ -1,11 +1,92 @@
-export const data = {
+export type TitleType = {
+  title: string;
+  subTitle?: string;
+};
+
+export type IntroType = TitleType & {
+  paragraph: string;
+  skills: SkillType[];
+};
+
+export type ServiceType = TitleType & {
+  icon: string;
+};
+
+export type SkillType = {
+  name: string;
+  level: string;
+  extra?: boolean;
+};
+
+export type SocialLinkType = {
+  icon: string;
+  link?: string;
+  target?: string;
+  followable?: boolean;
+  scrollTo?: string;
+};
+
+export type WorkExperienceJobType = {
+  company: string;
+  dates: string;
+  position: string;
+  description: string;
+  logo?: string;
+};
+
+export type WorkExperienceType = TitleType & {
+  jobs: WorkExperienceJobType[];
+};
+
+export type LangType = {
+  icon: string;
+  message: string;
+  level: string;
+};
+
+export type LangsType = TitleType & {
+  items: LangType[];
+};
+
+export type ContactDetailsType = TitleType & {
+  description: string;
+  items: {
+    icon: string;
+    head: string;
+    text: string;
+    link?: string;
+    target?: string;
+  }[]
+};
+
+export type FollowMeType = {
+  title: string;
+};
+
+export type DataStructure = {
+  hero: TitleType;
+  intro: IntroType;
+  socialLinks: {
+    actionText: string;
+    followText: string;
+    links: SocialLinkType[];
+  };
+  services: {
+    title: string;
+    subTitle: string;
+    services: ServiceType[];
+  };
+  portfolio: TitleType,
+  workExperience: WorkExperienceType;
+  langs: LangsType;
+  contactDetails: ContactDetailsType;
+  followMe: FollowMeType;
+};
+
+export const data: DataStructure = {
   hero: {
     title: "Hello, my name is\nMarshall Laszlo Toth!",
   },
-  letsconnect: [
-    "Let's connect",
-    "Connect with me"
-  ],
   intro: {
     title: "Who am I?",
     subTitle: "I'm Laszlo Toth, a dedicated Software Engineer",
@@ -44,28 +125,30 @@ export const data = {
   },
   socialLinks: {
     actionText: "Let's connect",
+    followText: "Follow me on",
     links: [
       {
-        icon: "bxl-facebook-square",
-        link: "https://www.facebook.com/marshall.things"
-      },
-      {
         icon: "bxl-github",
-        link: "https://github.com/tolacika"
+        link: "https://github.com/tolacika",
+        followable: true
       },
       {
         icon: "bxl-linkedin-square",
-        link: "https://www.linkedin.com/in/tolacika/"
+        link: "https://www.linkedin.com/in/tolacika/",
+        followable: true
+      },
+      {
+        icon: "bxl-facebook-square",
+        link: "https://www.facebook.com/marshall.things",
+        followable: true
       },
       {
         icon: "bx-envelope",
-        link: "#contact",
-        target: "_self"
+        scrollTo: "#contact",
       },
       {
         icon: "bxs-map-pin",
-        link: "#map",
-        target: "_self"
+        scrollTo: "#contact",
       }
     ]
   },
@@ -75,42 +158,39 @@ export const data = {
     services: [
       {
         title: "Web Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         icon: "development"
       },
       {
-        title: "Technical Writing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Web Design",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        icon: "graphics"
+      },
+      {
+        title: "Software Engineering",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         icon: "content"
       },
       {
-        title: "Mobile Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Mobile & IoT Development",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         icon: "mobile"
       },
       {
-        title: "Email Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Electrical Engineering",
+        subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         icon: "email"
       },
       {
         title: "Graphic Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        subTitle: "Oh, wait... Thats not my desk... But I have so many good designer couleges!",
         icon: "design"
-      },
-      {
-        title: "Web Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        icon: "graphics"
       }
     ]
   },
   portfolio: {
     title: "Check out my Portfolio",
     subTitle: "Here's what I have done with the past"
-  },
-  latestClients: {
-    title: "My latest clients"
   },
   workExperience: {
     title: "My work experience",
@@ -196,5 +276,53 @@ export const data = {
         level: "5"
       }
     ]
+  },
+  contactDetails: {
+    title: "Here's a contact form",
+    subTitle: "Have Any Questions?",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit condimentum turpis nisl sem, viverra habitasse urna ante lobortis fermentum accumsan. Viverra habitasse urna ante lobortis fermentum accumsan.",
+    items: [
+      {
+        icon: "bxl-github",
+        head: "Github",
+        text: "gh/tolacika",
+        link: "https://github.com/tolacika",
+        target: "_blank"
+      },
+      {
+        icon: "bxl-linkedin-square",
+        head: "Linkedin",
+        text: "in/tolacika",
+        link: "https://www.linkedin.com/in/tolacika/",
+        target: "_blank"
+      },
+      {
+        icon: "bxl-facebook-square",
+        head: "Facebook",
+        text: "fb/marshall.things",
+        link: "https://www.facebook.com/marshall.things",
+        target: "_blank"
+      },
+      {
+        icon: "bx-phone",
+        head: "phone",
+        text: "(+36) 30 8751419",
+        link: "tel:+36308751419"
+      },
+      {
+        icon: "bx-envelope",
+        head: "email",
+        text: "inbox@tolacika.xyz",
+        link: "mailto:inbox@tolacika.xyz",
+      },
+      {
+        icon: "bxs-map-pin",
+        head: "location",
+        text: "Offenbach, Germany",
+      }
+    ],
+  },
+  followMe: {
+    title: "Keep up-to-date\nwith what I'm up to"
   }
-}
+};

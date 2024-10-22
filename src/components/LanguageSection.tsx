@@ -1,5 +1,5 @@
 
-import { HomeProps } from "@/pages";
+import { TextSourceType } from "@/pages";
 
 type LangItemProps = {
   lang: LangType,
@@ -31,7 +31,7 @@ const LangItem = ({ lang }: LangItemProps) => {
   );
 };
 
-const LanguageSection = ({ data }: { data: HomeProps }) => {
+const LanguageSection = ({ data }: { data: TextSourceType }) => {
 
   return (
     <div>

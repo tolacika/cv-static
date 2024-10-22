@@ -3,14 +3,14 @@ import Image from 'next/image';
 import bgHeroImage from '../assets/img/bg-hero.jpg';
 import blogAuthorImage from '../assets/img/blog-author.jpg';
 import LetsConnect from './LetsConnect';
-import { HomeProps } from '@/pages';
+import { TextSourceType } from '@/pages';
 
 
-const Hero = ({ data }: { data: HomeProps }) => {
-
+const Hero = ({ data }: { data: TextSourceType }) => {
+  console.log(bgHeroImage);
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-8"
-      style={{ backgroundImage: `url(${bgHeroImage})` }}>
+      style={{ backgroundImage: `url(${bgHeroImage.src})` }}>
       <div
         className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
       </div>
@@ -22,9 +22,9 @@ const Hero = ({ data }: { data: HomeProps }) => {
           </div>
           <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
             <h1 className="text-center font-header text-4xl whitespace-pre-wrap text-white sm:text-left sm:text-5xl xl:text-6xl">
-              {data.hero.title}
+              {data.hero?.title}
             </h1>
-            <LetsConnect data={data} className='pt-3' />
+            <LetsConnect data={data} className='pt-3 lg:justify-start' />
           </div>
         </div>
       </div>
