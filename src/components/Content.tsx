@@ -11,11 +11,11 @@ import FollowMe from './FollowMe';
 //import BlogTeaser from './BlogTeaser';
 //import Statistics from './Statistics';
 
-const Content = ({ data }: { data: TextSourceType }) => {
+const Content = ({ data, print = false }: { data: TextSourceType, print: boolean }) => {
 
   return (
     <div>
-      <Hero data={data} />
+      <Hero data={data} print={print} />
 
       <Intro data={data} />
 

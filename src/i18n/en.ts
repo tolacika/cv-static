@@ -184,7 +184,7 @@ export const data: DataStructure = {
       },
       {
         title: "Graphic Design",
-        subTitle: "Oh, wait... Thats not my desk... But I have so many good designer couleges!",
+        subTitle: "Oh, wait... Thats not my desk... But I have so many good designer friends!",
         icon: "design"
       }
     ]
@@ -199,13 +199,13 @@ export const data: DataStructure = {
     jobs: [
       {
         company: "NextTuesday &\nAdMetrics GmbH",
-        dates: "Sept 2024 – current",
+        dates: "Sept 2024 – March 2025",
         position: "Senior PHP Engineer",
-        description: "I've developed various solutions for numerous clients. Currently working on big dreams."
+        description: "I've developed various solutions for numerous clients. I've worked on big dreams with React, Laravel, and Neos CMS."
       },
       {
         company: "Ordio GmbH",
-        dates: "Febr 2024 – May 2024",
+        dates: "Febr 2024 – June 2024",
         position: "Senior Full-stack Developer",
         description: "Integration of third-party systems to the main application using Symfony, TypeScript and React.",
         logo: "ordio"

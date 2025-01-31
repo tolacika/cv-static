@@ -6,11 +6,11 @@ import LetsConnect from './LetsConnect';
 import { TextSourceType } from '@/pages';
 
 
-const Hero = ({ data }: { data: TextSourceType }) => {
+const Hero = ({ data, print = false }: { data: TextSourceType, print: boolean }) => {
   console.log(bgHeroImage);
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-8"
-      style={{ backgroundImage: `url(${bgHeroImage.src})` }}>
+      style={print ? {} : { backgroundImage: `url(${bgHeroImage.src})` }}>
       <div
         className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
       </div>

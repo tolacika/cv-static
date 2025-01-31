@@ -25,7 +25,7 @@ const imageSet = {
 };
 
 const WorkExperience = ({ data }: { data: TextSourceType }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false); 
+  const [isOpen, setIsOpen] = useState<boolean>(true); 
 
   return (
     <div className="container py-16 md:py-20" id="work">
@@ -80,7 +80,7 @@ const WorkExperience = ({ data }: { data: TextSourceType }) => {
         className="text-center mt-2 text-grey-40 hover:text-primary cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="uppercase text-xl">More</p>
+        <p className="uppercase text-xl">{isOpen ? "LESS" : "MORE"}</p>
         <i className={`bx text-5xl bx-chevron-${isOpen ? 'up' : 'down'}`}></i>
       </div>
     </div>

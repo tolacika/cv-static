@@ -40,7 +40,7 @@ const Navbar = ({ data }: { data: TextSourceType }) => {
 
   return (
     <>
-      <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
+      <div className="w-full z-50 top-0 py-3 sm:py-5  absolute no-print">
         <div className="container flex items-center justify-between">
           <div>
             <a onClick={() => window.document.location.reload()}>
