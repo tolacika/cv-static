@@ -11,7 +11,7 @@ import FollowMe from './FollowMe';
 //import BlogTeaser from './BlogTeaser';
 //import Statistics from './Statistics';
 
-const Content = ({ data, print = false }: { data: TextSourceType, print: boolean }) => {
+const Content = ({ data, print = false }: { data: TextSourceType, print?: boolean }) => {
 
   return (
     <div>
